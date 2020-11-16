@@ -10,10 +10,10 @@ node {
     }
 
     stage('Test') {
-        // app.inside {
-        sh 'npm install --only=dev'
-        sh 'npm test'
-        // }
+        app.inside {
+            sh 'npm install --only=dev'
+            sh 'npm test'
+        }
     }
 
     stage('Push image') {
